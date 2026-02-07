@@ -108,7 +108,7 @@ src/
 
 ## 코드 컨벤션 (간단)
 
-도메인 내부에서만 쓰는 코드는 features/personal-year/\* 안에 둡니다.
+도메인 내부에서만 쓰는 코드는 features/personal-year/\* 안에 둡니다.  
 여러 기능에서 공통으로 쓰는 코드가 생기면 src/shared(또는 src/lib)로 분리합니다.
 
 ---
