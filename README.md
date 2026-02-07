@@ -5,6 +5,8 @@
 
 Numerology의 1~9년 주기 개념을 바탕으로, 각 해의 흐름과 주목할 포인트를 간결하게 안내합니다.
 
+[<code>페이지 이동</code>](https://personal-year-number.vercel.app/)
+
 ---
 
 ## 주요 기능
@@ -127,4 +129,3 @@ pnpm lint # 린트
 ## Screenshot
 
 <img width="360" height="394" alt="image" src="https://github.com/user-attachments/assets/0fba2ed3-dff0-4762-a971-6551b5402bf8" />
-
