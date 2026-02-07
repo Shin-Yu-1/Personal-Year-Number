@@ -124,6 +124,7 @@ pnpm lint # 린트
 
 ---
 
-## 라이선스
+## Screenshot
 
-- 개인 학습/프로젝트 용도로 작성되었습니다.
+<img width="360" height="394" alt="image" src="https://github.com/user-attachments/assets/0fba2ed3-dff0-4762-a971-6551b5402bf8" />
+
