@@ -1,3 +1,5 @@
+import type { Birth } from "@/features/personal-year/hooks/usePersonalYear";
+
 export const reduceToSingleDigit = (value: number): number => {
   let n = Math.abs(value);
   while (n > 9) {
@@ -16,11 +18,9 @@ export const sumDigits = (value: number): number =>
     .reduce((sum, ch) => sum + Number(ch), 0);
 
 export const calculatePersonalYearNumber = (
-  birthDate: Date,
+  { month, day }: Birth,
   targetYear: number
 ): number => {
-  const month = birthDate.getMonth() + 1;
-  const day = birthDate.getDate();
   const universalYear = reduceToSingleDigit(sumDigits(targetYear));
   return reduceToSingleDigit(month + day + universalYear);
 };

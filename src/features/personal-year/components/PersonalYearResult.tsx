@@ -22,7 +22,8 @@ export default function PersonalYearResult({ result, info }: Props) {
       </h2>
 
       <p className={styles.description}>
-        개인 연도수는 생월 + 생일 + 연도 합의 자릿수 합을 1~9로 환산한 값입니다.
+        Personal Year Number는 생월 + 생일 + 연도 합의 자릿수 합을 1~9로 환산한
+        값입니다.
       </p>
 
       <div className={styles.headline}>

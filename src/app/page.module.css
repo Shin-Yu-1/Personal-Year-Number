@@ -54,6 +54,11 @@
   gap: 8px;
 }
 
+.main select {
+  border: 0;
+  border-bottom: 1px solid #444;
+}
+
 .main input {
   padding: 10px 12px;
   border-radius: 8px;

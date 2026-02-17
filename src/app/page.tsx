@@ -5,8 +5,24 @@ import PersonalYearResult from "@/features/personal-year/components/PersonalYear
 import styles from "./page.module.css";
 
 export default function PersonalYearNumberPage() {
-  const { birth, setBirth, year, setYear, error, result, resultInfo, submit } =
+  const { birth, setBirth, error, result, resultInfo, submit } =
     usePersonalYear();
+
+  const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedMonth = Number(e.target.value);
+    setBirth((prev) => ({
+      ...prev,
+      month: selectedMonth,
+    }));
+  };
+
+  const handleDayChange: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
+    const selectedDay = Number(e.target.value);
+    setBirth((prev) => ({
+      ...prev,
+      day: selectedDay,
+    }));
+  };
 
   return (
     <div className={styles.page}>
@@ -14,7 +30,7 @@ export default function PersonalYearNumberPage() {
         <header>
           <h1>Personal Year Number</h1>
           <p>
-            생년월일과 기준 연도를 입력하면 해당 해의 개인 연도수를 계산합니다.
+            생일 월/일을 입력하면 올해 기준 Personal Year Number를 계산합니다.
           </p>
         </header>
 
@@ -23,25 +39,34 @@ export default function PersonalYearNumberPage() {
             <fieldset>
               <legend className={styles.srOnly}>개인 연도수 계산 입력</legend>
 
-              <label>
-                <span>생년월일</span>
-                <input
-                  type="date"
-                  value={birth}
-                  onChange={(e) => setBirth(e.target.value)}
-                />
-              </label>
-
-              <label>
-                <span>기준 연도</span>
-                <input
-                  type="number"
-                  inputMode="numeric"
-                  value={year}
-                  min={1}
-                  onChange={(e) => setYear(Number(e.target.value))}
-                />
-              </label>
+              <div>
+                <select
+                  id="month"
+                  name="month"
+                  value={birth.month}
+                  onChange={handleMonthChange}
+                >
+                  {Array.from({ length: 12 }, (_, i) => i + 1).map((month) => (
+                    <option key={month} value={month}>
+                      {month}
+                    </option>
+                  ))}
+                </select>
+                <span>월 </span>
+                <select
+                  id="day"
+                  name="day"
+                  value={birth.day}
+                  onChange={handleDayChange}
+                >
+                  {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
+                    <option key={day} value={day}>
+                      {day}
+                    </option>
+                  ))}
+                </select>
+                <span>일</span>
+              </div>
 
               <button type="submit">계산하기</button>
             </fieldset>
